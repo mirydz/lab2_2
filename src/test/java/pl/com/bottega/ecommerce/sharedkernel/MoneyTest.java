@@ -37,6 +37,13 @@ public class MoneyTest {
         assertThat(result, is(expected));
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void shouldThrowWhenSubtractingDifferentCurrency() {
+        Money money = new Money(5.99, "USD");
+        Money moneyToSubtract = new Money(2.99, "PLN");
+
+        money.subtract(moneyToSubtract);
+    }
 
 
 }
