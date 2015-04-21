@@ -25,4 +25,18 @@ public class MoneyTest {
 
         money.add(moneyToAdd);
     }
+
+    @Test
+    public void shouldSubtractMoneyOfTheSameCurrency() {
+        Money money = new Money(9.29, "USD");
+        Money moneyToSubtract = new Money(1.29, "USD");
+
+        Money result = money.subtract(moneyToSubtract);
+
+        Money expected = new Money(8.00, "USD");
+        assertThat(result, is(expected));
+    }
+
+
+
 }
