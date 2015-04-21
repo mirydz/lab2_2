@@ -97,8 +97,8 @@ public class Money {
 	 *         one that comes from Money that has non-zero value.
 	 */
 	private Currency determineCurrencyCode(Money otherMoney) {
-		String resultingCurrenctCode = isZero(denomination) ? otherMoney.currencyCode : currencyCode;
-		return Currency.getInstance(resultingCurrenctCode);
+		String resultingCurrencyCode = isZero(denomination) ? otherMoney.currencyCode : currencyCode;
+		return Currency.getInstance(resultingCurrencyCode);
 	}
 
 	public String getCurrencyCode() {
