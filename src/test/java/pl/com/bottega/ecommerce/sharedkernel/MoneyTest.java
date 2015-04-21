@@ -17,4 +17,12 @@ public class MoneyTest {
         Money expected = new Money(33.55, "USD");
         assertThat(result, is(expected));
     }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void shouldThrowWhenAddingDifferentCurrency() {
+        Money money = new Money(11.99, "USD");
+        Money moneyToAdd = new Money(2.99, "PLN");
+
+        money.add(moneyToAdd);
+    }
 }
